@@ -28,7 +28,9 @@ $('.twitch-connect').click(function() {
 $('.comm').click(function() {
 $.ajax({
   type: "POST",
-  url: 'https://api.twitch.tv/kraken/channels/bizkit047/commercial?oauth_token=rgxmjvp9i4qvq68sk1i617y0tnittx?length=30'
+  contentType: 'application/json',
+  dataType: 'jsonp',
+  url: 'https://api.twitch.tv/kraken/channels/bizkit047/commercial?oauth_token=rgxmjvp9i4qvq68sk1i617y0tnittx?_method=POST'
 });
 });
 
