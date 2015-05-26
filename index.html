@@ -34,7 +34,8 @@ $('.get-status').click(function(){
             success: function(data) {
                       var obj = JSON.parse(data);
                       
-                      document.getElementById("subs").innerHTML = obj.length;
+                      document.getElementById("sublen").innerHTML = obj.length;
+                      document.getElementById("datastatus").innerHTML = data.status;
 
                      }
         })
@@ -64,8 +65,9 @@ window.onload = function(){
 <br><br>
 <p id="starting"></p>
 <br><br>
-<p id="subs"></p>
-
+<p id="sublen"></p>
+<br><br>
+<p id="datastatus"></p>
 </body>
 
 </html>
