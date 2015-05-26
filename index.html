@@ -26,8 +26,16 @@ $('.twitch-connect').click(function() {
 });
 
 $('.get-status').click(function(){
+                     
+  $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/subscriptions?oauth_token=0bk32axhawvqe4537a1axpnirly7m5',
+            type: 'GET',
+            success: function(data) {
+                      document.getElementById("subs").innerHTML = data;
+
+                     }
+        });
                       
-                      });
+                                 });
 
     });
 </script>
@@ -49,9 +57,9 @@ window.onload = function(){
 <br>
 
 <p id="url">Current URL here</p>
+<br><br>
+<p id="subs"></p>
 
 </body>
-
-
 
 </html>
