@@ -34,7 +34,7 @@ $('.get-status').click(function(){
             success: function(data) {
                       //document.getElementById("sublen").innerHTML = data[0];
                       var test = JSON.parse(data);
-                      document.getElementById("sublen").innerHTML = test;
+                      document.getElementById("sublen").innerHTML = typeof test;
                       //document.getElementById("datastatus").innerHTML = data
 
                      }
