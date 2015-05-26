@@ -30,7 +30,7 @@ $('.get-status').click(function(){
   $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/subscriptions?oauth_token=yji19j8nbe12jxggioisw8jy61xxb4',
             type: 'GET',
             contentType: 'application/json',
-            dataType: 'text',
+            dataType: 'jsonp',
             success: function(data) {
                       //var newdata = JSON.parse(data);
                       
