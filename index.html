@@ -33,8 +33,8 @@ $('.get-status').click(function(){
             dataType: 'jsonp',
             success: function(data) {
                       //document.getElementById("sublen").innerHTML = data[0];
-                      //var test = JSON.parse(data);
-                      document.getElementById("datastatus").innerHTML = "Worked?";
+                      var test = JSON.parse(data);
+                      document.getElementById("sublen").innerHTML = test;
                       //document.getElementById("datastatus").innerHTML = data
 
                      }
