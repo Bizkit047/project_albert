@@ -26,7 +26,7 @@ $('.twitch-connect').click(function() {
 });
 
 $('.comm').click(function() {
-  Twitch.api({method: 'channels/bizkit047/commercial'}, function(error, channel) {
+  Twitch.api({method: 'channels/bizkit047/commercial', verb: 'POST'}, function(error, channel) {
     //Something here
     });
   
