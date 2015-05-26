@@ -27,15 +27,15 @@ $('.twitch-connect').click(function() {
 
 $('.get-status').click(function(){
                      document.getElementById("starting").innerHTML = "Starting...";
-  $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/subscriptions?oauth_token=0bk32axhawvqe4537a1axpnirly7m5',
+  $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/subscriptions?oauth_token=yji19j8nbe12jxggioisw8jy61xxb4',
             type: 'GET',
             contentType: 'application/json',
             dataType: 'jsonp',
             success: function(data) {
-                      var obj = JSON.parse(data);
+                      var newdata = JSON.parse(data);
                       
-                      document.getElementById("sublen").innerHTML = obj.length;
-                      document.getElementById("datastatus").innerHTML = data.status;
+                      document.getElementById("sublen").innerHTML = newdata.length;
+                      document.getElementById("datastatus").innerHTML = newdata.status;
 
                      }
         })
