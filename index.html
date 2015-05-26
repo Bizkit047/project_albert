@@ -32,7 +32,9 @@ $('.get-status').click(function(){
             contentType: 'application/json',
             dataType: 'jsonp',
             success: function(data) {
-                      document.getElementById("subs").innerHTML = data;
+                      var obj = JSON.parse(data);
+                      
+                      document.getElementById("subs").innerHTML = obj.length;
 
                      }
         })
