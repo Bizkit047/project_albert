@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TwitchTV SDK Example App</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+
+<script>
+
+$(function() {
+
+  Twitch.init({clientId: '2zm8olne4iyx9zt9ro40h7vxool7910'}, function(error, status) {
+    // the sdk is now loaded
+  });
+$('.twitch-connect').click(function() {
+  Twitch.login({redirect_uri: 'http://localhost', popup: true,
+    scope: ['user_read', 'channel_read', 'channel_editor', 'channel_subscriptions', 'user_subscriptions', 'channel_check_subscription']
+  });
+})
+    });
+</script>
+
+<script>
+window.onload = function(){
+    document.getElementById("url").innerHTML = window.location.toString();
+}
+</script>
+
+</head>
+
+<body>
+
+<img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" />
+
+<br>
+<br>
+
+<p id="url">Current URL here</p>
+
+</body>
+
+</html>
