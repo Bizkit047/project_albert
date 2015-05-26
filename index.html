@@ -25,6 +25,21 @@ $('.twitch-connect').click(function() {
   });
 });
 
+$('.comm').click(function() {
+      $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/commercial?oauth_token=yji19j8nbe12jxggioisw8jy61xxb4?length=30',
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'jsonp',
+            //success: function(data) {
+                      //document.getElementById("sublen").innerHTML = data[0];
+                      //var test = JSON.parse(data);
+                      //document.getElementById("sublen").innerHTML = typeof data;
+                      //document.getElementById("datastatus").innerHTML = data
+
+                     //}
+        })
+});
+
 $('.get-status').click(function(){
                      document.getElementById("starting").innerHTML = "Starting...";
   $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/subscriptions?oauth_token=yji19j8nbe12jxggioisw8jy61xxb4',
@@ -33,8 +48,8 @@ $('.get-status').click(function(){
             dataType: 'jsonp',
             success: function(data) {
                       //document.getElementById("sublen").innerHTML = data[0];
-                      var test = JSON.parse(data);
-                      document.getElementById("sublen").innerHTML = typeof test;
+                      //var test = JSON.parse(data);
+                      document.getElementById("sublen").innerHTML = typeof data;
                       //document.getElementById("datastatus").innerHTML = data
 
                      }
@@ -59,6 +74,8 @@ window.onload = function(){
 <img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" />
 <br>
 <img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="get-status" href="#" />
+<br>
+<img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="comm" href="#" />
 <br>
 <br>
 
