@@ -30,12 +30,13 @@ $('.get-status').click(function(){
   $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/subscriptions?oauth_token=yji19j8nbe12jxggioisw8jy61xxb4',
             type: 'GET',
             contentType: 'application/json',
-            dataType: 'jsonp',
+            dataType: 'text',
             success: function(data) {
-                      var newdata = JSON.parse(data);
+                      //var newdata = JSON.parse(data);
                       
-                      document.getElementById("sublen").innerHTML = newdata.length;
-                      document.getElementById("datastatus").innerHTML = newdata.status;
+                      document.getElementById("sublen").innerHTML = data.length;
+                      //document.getElementById("datastatus").innerHTML = data.status;
+                      document.getElementById("datastatus").innerHTML = data
 
                      }
         })
