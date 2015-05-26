@@ -40,8 +40,8 @@ $('.get-status').click(function(){
             dataType: 'jsonp',
             success: function(data) {
                       //document.getElementById("sublen").innerHTML = data[0];
-                      //var test = JSON.parse(data);
-                      //document.getElementById("sublen").innerHTML = typeof data;
+                      var test = data.subscriptions;
+                      document.getElementById("sublen").innerHTML = test.length;
                       //document.getElementById("datastatus").innerHTML = data
 
                      }
