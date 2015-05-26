@@ -32,11 +32,14 @@ $('.get-status').click(function(){
             contentType: 'application/json',
             dataType: 'jsonp',
             success: function(data) {
-                      //var newdata = JSON.parse(data);
-                      
-                      document.getElementById("sublen").innerHTML = data.length;
+                      var newdata = JSON.parse(data);
+                      var out = "";
+                          for(i = 0; i < newdata.length; i++) {
+                               out += "<br>" + newdata[i];
+                          }
+                      document.getElementById("sublen").innerHTML = out;
                       //document.getElementById("datastatus").innerHTML = data.status;
-                      document.getElementById("datastatus").innerHTML = data
+                      //document.getElementById("datastatus").innerHTML = data
 
                      }
         })
