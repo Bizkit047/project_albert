@@ -14,12 +14,21 @@ $(function() {
 
   Twitch.init({clientId: '2zm8olne4iyx9zt9ro40h7vxool7910'}, function(error, status) {
     // the sdk is now loaded
+    if (status.authenticated) {
+      // Already logged in, hide button
+       $('.twitch-connect').hide()
+                              }
   });
 $('.twitch-connect').click(function() {
   Twitch.login({redirect_uri: 'http://bizkit047.github.io/project_albert/', popup: false,
     scope: ['user_read', 'channel_read', 'channel_editor', 'channel_subscriptions', 'user_subscriptions', 'channel_check_subscription']
   });
-})
+});
+
+$('.get-status').click(function(){
+                      
+                      });
+
     });
 </script>
 
@@ -34,7 +43,8 @@ window.onload = function(){
 <body>
 
 <img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" />
-
+<br>
+<img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="get-status" href="#" />
 <br>
 <br>
 
