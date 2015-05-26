@@ -14,10 +14,10 @@ $(function() {
 
   Twitch.init({clientId: '2zm8olne4iyx9zt9ro40h7vxool7910'}, function(error, status) {
     // the sdk is now loaded
-    if (status.authenticated) {
+    //if (status.authenticated) {
       // Already logged in, hide button
-       $('.twitch-connect').hide()
-                              }
+       //$('.twitch-connect').hide()
+                              //}
   });
 $('.twitch-connect').click(function() {
   Twitch.login({redirect_uri: 'http://bizkit047.github.io/project_albert/', popup: false,
