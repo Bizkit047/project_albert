@@ -26,18 +26,10 @@ $('.twitch-connect').click(function() {
 });
 
 $('.comm').click(function() {
-      $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/commercial?oauth_token=yji19j8nbe12jxggioisw8jy61xxb4?length=30',
-            type: 'POST',
-            contentType: 'application/json',
-            dataType: 'jsonp',
-            //success: function(data) {
-                      //document.getElementById("sublen").innerHTML = data[0];
-                      //var test = JSON.parse(data);
-                      //document.getElementById("sublen").innerHTML = typeof data;
-                      //document.getElementById("datastatus").innerHTML = data
-
-                     //}
-        })
+$.ajax({
+  type: "POST",
+  url: https://api.twitch.tv/kraken/channels/bizkit047/commercial?oauth_token=yji19j8nbe12jxggioisw8jy61xxb4?length=30,
+});
 });
 
 $('.get-status').click(function(){
@@ -49,7 +41,7 @@ $('.get-status').click(function(){
             success: function(data) {
                       //document.getElementById("sublen").innerHTML = data[0];
                       //var test = JSON.parse(data);
-                      document.getElementById("sublen").innerHTML = typeof data;
+                      //document.getElementById("sublen").innerHTML = typeof data;
                       //document.getElementById("datastatus").innerHTML = data
 
                      }
