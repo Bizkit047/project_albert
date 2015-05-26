@@ -32,8 +32,9 @@ $('.get-status').click(function(){
             contentType: 'application/json',
             dataType: 'jsonp',
             success: function(data) {
-                      document.getElementById("sublen").innerHTML = data[0];
-                      //document.getElementById("datastatus").innerHTML = data.status;
+                      //document.getElementById("sublen").innerHTML = data[0];
+                      var test = JSON.parse(data);
+                      document.getElementById("datastatus").innerHTML = "Worked?";
                       //document.getElementById("datastatus").innerHTML = data
 
                      }
