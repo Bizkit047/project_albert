@@ -28,13 +28,13 @@ $('.twitch-connect').click(function() {
 $('.comm').click(function() {
 $.ajax({
   type: "POST",
-  url: 'https://api.twitch.tv/kraken/channels/bizkit047/commercial?oauth_token=yji19j8nbe12jxggioisw8jy61xxb4?length=30'
+  url: 'https://api.twitch.tv/kraken/channels/bizkit047/commercial?oauth_token=rgxmjvp9i4qvq68sk1i617y0tnittx?length=30'
 });
 });
 
 $('.get-status').click(function(){
                      document.getElementById("starting").innerHTML = "Starting...";
-  $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/subscriptions?oauth_token=yji19j8nbe12jxggioisw8jy61xxb4',
+  $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/subscriptions?oauth_token=rgxmjvp9i4qvq68sk1i617y0tnittx',
             type: 'GET',
             contentType: 'application/json',
             dataType: 'jsonp',
