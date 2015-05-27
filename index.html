@@ -26,7 +26,7 @@ $('.twitch-connect').click(function() {
 });
 
 $('.comm').click(function() {
-  Twitch.api({method: 'channels/bizkit047/commercial?oauth_token=k6d1g30oekub5ck75qfrgeuz5slmsh', verb: 'POST'}, function(error, channel) {
+  Twitch.api({method: 'channels/bizkit047/commercial', verb: 'POST'}, function(error, channel) {
     //Something here
     });
   
@@ -39,15 +39,12 @@ $('.get-status').click(function(){
             contentType: 'application/json',
             dataType: 'jsonp',
             success: function(data) {
-                      //document.getElementById("sublen").innerHTML = data[0];
-                      var test = data.subscriptions;
-                      document.getElementById("sublen").innerHTML = test[1];
-                      //document.getElementById("datastatus").innerHTML = data
-
+                      //This appears to work fine
+                      //var test = data.subscriptions;
+                      
                      }
         })
-        document.getElementById("datastatus").innerHTML = "Out of the Ajax part?";
-                      
+
                                  });
 
     });
@@ -75,7 +72,7 @@ window.onload = function(){
 <br><br>
 <p id="starting"></p>
 <br><br>
-<p id="sublen"></p>
+<p id="idk"></p>
 <br><br>
 <p id="datastatus"></p>
 </body>
