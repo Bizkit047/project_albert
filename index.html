@@ -33,7 +33,7 @@ $('.twitch-connect').click(function() {
                         contentType: 'application/json',
                         dataType: 'jsonp',
                         data: {
-                                oauth_token: myToken, '_method': 'POST'
+                                oauth_token: myToken, '_method': 'POST', 'length': 60;
                         },
                         headers: {'Authorization': 'OAuth ' + myToken
                         },
