@@ -12,12 +12,14 @@
 
 $(function() {
 
+var myToken = 't269s0zm0pnrf97hv84dvyh35b5rnk';
+
   Twitch.init({clientId: '2zm8olne4iyx9zt9ro40h7vxool7910'}, function(error, status) {
-    // the sdk is now loaded
-    //if (status.authenticated) {
-      // Already logged in, hide button
-       //$('.twitch-connect').hide()
-                              //}
+if (status.authenticated) {
+            // Already logged in, change button and store token
+            myToken = Twitch._config.session.token;
+            $('.twitch-connect').html('<button>Request new Token</button>');
+        }
   });
 $('.twitch-connect').click(function() {
   Twitch.login({redirect_uri: 'http://bizkit047.github.io/project_albert/', popup: false,
@@ -30,11 +32,9 @@ $('.twitch-connect').click(function() {
                         url: 'https://api.twitch.tv/kraken/channels/bizkit047/commercial',
                         type: 'POST',
                         data: {
-                                oauth_token: "t269s0zm0pnrf97hv84dvyh35b5rnk"
+                                oauth_token: myToken
                         },
-                        headers: {
-                                'Access-Control-Allow-Origin': 'http://bizkit047.github.io',
-                                'Authorization': 'OAuth ' + "t269s0zm0pnrf97hv84dvyh35b5rnk"
+                        headers: {'Authorization': 'OAuth ' + myToken
                         },
                         success: function (response) {
                                 console.log(response);
@@ -47,7 +47,7 @@ $('.twitch-connect').click(function() {
 
 $('.get-status').click(function(){
                      document.getElementById("starting").innerHTML = "Starting...";
-  $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/subscriptions?oauth_token=k6d1g30oekub5ck75qfrgeuz5slmsh',
+  $.ajax({ url: 'https://api.twitch.tv/kraken/channels/bizkit047/subscriptions?oauth_token=' + myToken,
             type: 'GET',
             contentType: 'application/json',
             dataType: 'jsonp',
