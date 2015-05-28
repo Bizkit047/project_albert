@@ -30,11 +30,10 @@ $('.twitch-connect').click(function() {
         $('.comm').click(function() {
                 $.ajax({
                         url: 'https://api.twitch.tv/kraken/channels/bizkit047/commercial',
-                        type: 'POST',
                         contentType: 'application/json',
                         dataType: 'jsonp',
                         data: {
-                                oauth_token: myToken
+                                oauth_token: myToken, '_method': 'POST'
                         },
                         headers: {'Authorization': 'OAuth ' + myToken
                         },
