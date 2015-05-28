@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>TwitchTV SDK Example App</title>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="twitch.min.js"></script>
 
 <script>
@@ -25,12 +25,25 @@ $('.twitch-connect').click(function() {
   });
 });
 
-$('.comm').click(function() {
-  Twitch.api({method: 'channels/bizkit047/commercial', params: {length:30}, verb: 'POST'}, function(error, channel) {
-    //Something here
-    });
-  
-});
+        $('.comm').click(function() {
+                $.ajax({
+                        url: 'https://api.twitch.tv/kraken/channels/bizkit047/commercial',
+                        type: 'POST',
+                        data: {
+                                oauth_token: "t269s0zm0pnrf97hv84dvyh35b5rnk"
+                        },
+                        headers: {
+                                'Access-Control-Allow-Origin': 'http://bizkit047.github.io',
+                                'Authorization': 'OAuth ' + "t269s0zm0pnrf97hv84dvyh35b5rnk"
+                        },
+                        success: function (response) {
+                                console.log(response);
+                        },
+                        failure: function (response) {
+                                console.log(response);
+                        }
+                });
+        });
 
 $('.get-status').click(function(){
                      document.getElementById("starting").innerHTML = "Starting...";
