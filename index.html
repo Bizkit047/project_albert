@@ -81,6 +81,9 @@ $('.get-status').click(function(){
             type: 'GET',
             contentType: 'application/json',
             dataType: 'jsonp',
+            data: {
+                    'limit': 100
+                  },
             success: function(data) {
                       var newObj = data;
 		      document.getElementById("status").innerHTML = newObj._total;
