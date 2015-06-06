@@ -54,7 +54,7 @@ $('.twitch-connect').click(function() {
                         },
                         success: function (response) {
                                 var newObj = response;
-                                //document.getElementById("status").innerHTML = newObj.error + ': ' + newObj.message;
+                                document.getElementById("status").innerHTML = newObj.error + ': ' + newObj.message;
 				comTimeInt = 0;
 				clearInterval(theTimer);
 				theTimer = setInterval(function(){updateComTime()}, 1000)
